@@ -15,7 +15,9 @@ To run it:
 - Trigger tiny_executor.py
 
 GPU before running:
+
 ![img.png](img.png)
 
 Chatbot running and GPU showing activity:
+
 ![img_1.png](img_1.png)
