@@ -1,0 +1,13 @@
+# Python-specific ignores
+*.pyc
+__pycache__/
+
+# Virtual environment ignores
+venv/
+.venv/
+
+# IDE-specific files
+.idea/
+.vscode/
+speechgpt
+*.run
