@@ -21,3 +21,15 @@ GPU before running:
 Chatbot running and GPU showing activity:
 
 ![img_1.png](img_1.png)
+
+## Experiments
+
+In case, some experiments need to be executed, there's a script within the 
+experiments folder(experimentor.py) that can be executed. Here's a brief segmented description on how it makes the experiments:
+- There is a questions.txt file that includes a list of 100 randomized questions including a several variety of topics.
+- There's a parameters.py file where parameters used to set up the execution are specified.
+- Code is currently segmented in these main scripts:
+  - requirements_validator.py: which contains validations of pre-requisites to execute the experiment as well, currently it only validates that the model is being executed in the GPU
+  - model_interactor.py: contains the ModelInteractor class which has methods to interact with the model(asking questions, capturing answers, etc).
+  - experimentor.py: script in charge of triggering the whole experiment(preparation and actual execution with the parameters and specifications in the other files)
+  - reports.py: Saves a snapshot with the values and results of the experiment
