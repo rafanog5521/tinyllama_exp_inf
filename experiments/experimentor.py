@@ -4,6 +4,7 @@ import reports
 import parameters
 
 
+
 def read_questions_from_file():
     # this code reads the questions from the txt file, parses it into the chat template
     # and returns the resulting dictionary
@@ -29,15 +30,8 @@ def prepare_experiment():
 def run_experiment(questionnaire):   # WIP
     mi = model_interactor.ModelInteractor()
     output = []
-    index = 0
     for q in questionnaire:
-        output[q["content"]] = mi.ask_question(q)
-        print(index + 1)
-        # output[q]["answers"] = mi.ask_question(q)
-        # save questions in a variable
-
-    for f in output:
-        print(f)
+        output.append(mi.ask_question())
 
     return output
 
@@ -53,5 +47,6 @@ if __name__ == "__main__":
         print("Error detected in a requirement, please check that data and parameter files are properly placed.")
     else:
         print("Requirements ready! Running experiment")
-        results = run_experiment(question_template)
+        run_experiment(question_template)
+        # results = run_experiment(question_template)
         # save_results(results)
