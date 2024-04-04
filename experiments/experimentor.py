@@ -2,7 +2,8 @@ import model_interactor
 import requirements_validator
 import reports
 import parameters
-
+import time
+from tqdm import tqdm
 
 
 def read_questions_from_file():
@@ -28,11 +29,15 @@ def prepare_experiment():
 
 
 def run_experiment(questionnaire):   # WIP
+    progress_bar = tqdm(total=len(questionnaire), desc="Processing questionnaire...")
     mi = model_interactor.ModelInteractor()
     output = []
     for q in questionnaire:
-        output.append(mi.ask_question())
+        output.append(mi.ask_question(q))
+        progress_bar.update(1)
 
+    progress_bar.close()
+    print(output)
     return output
 
 
